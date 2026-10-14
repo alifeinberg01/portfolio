@@ -419,3 +419,7 @@ article.post h2 {
 
 /* keep the last dropdown inside the page */
 @media (min-width: 721px) { .nav > li:nth-last-child(-n + 2) .sub { left: auto; right: 0; } }
+
+.takeaways { margin: 0; padding-left: 1.3em; }
+.takeaways li { margin-bottom: 10px; padding-left: 4px; }
+.takeaways li::marker { color: #d98aa3; }
