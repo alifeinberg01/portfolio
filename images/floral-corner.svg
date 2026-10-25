@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <symbol id="bloom" viewBox="-16 -16 32 32">
+      <g fill="currentColor">
+        <circle cx="0" cy="-8" r="7"/><circle cx="7.6" cy="-2.5" r="7"/><circle cx="4.7" cy="6.5" r="7"/>
+        <circle cx="-4.7" cy="6.5" r="7"/><circle cx="-7.6" cy="-2.5" r="7"/>
+      </g>
+      <circle r="3.6" fill="#e3cfa0"/>
+    </symbol>
+  </defs>
+  <g fill="none" stroke="#9db38f" stroke-width="2" stroke-linecap="round">
+    <path d="M-5 34 C70 28 150 60 196 150"/>
+    <path d="M34 -5 C30 70 70 132 156 180"/>
+    <path d="M20 20 C60 50 80 60 118 118"/>
+  </g>
+  <g fill="#9db38f" opacity=".85">
+    <ellipse cx="62" cy="26" rx="15" ry="6" transform="rotate(-20 62 26)"/>
+    <ellipse cx="104" cy="52" rx="15" ry="6" transform="rotate(48 104 52)"/>
+    <ellipse cx="150" cy="74" rx="15" ry="6" transform="rotate(8 150 74)"/>
+    <ellipse cx="186" cy="120" rx="14" ry="6" transform="rotate(78 186 120)"/>
+    <ellipse cx="24" cy="70" rx="15" ry="6" transform="rotate(110 24 70)"/>
+    <ellipse cx="56" cy="104" rx="15" ry="6" transform="rotate(30 56 104)"/>
+    <ellipse cx="88" cy="150" rx="15" ry="6" transform="rotate(80 88 150)"/>
+    <ellipse cx="134" cy="174" rx="14" ry="6" transform="rotate(5 134 174)"/>
+    <ellipse cx="92" cy="80" rx="12" ry="5" transform="rotate(-30 92 80)"/>
+  </g>
+  <!-- wisteria clusters -->
+  <g fill="#cdbbe6">
+    <circle cx="128" cy="60" r="7"/><circle cx="121" cy="71" r="7"/><circle cx="134" cy="72" r="6.5"/>
+    <circle cx="127" cy="83" r="6.5"/><circle cx="131" cy="95" r="5.5"/><circle cx="127" cy="105" r="4.5"/><circle cx="129" cy="114" r="3.2"/>
+    <circle cx="60" cy="128" r="6.5"/><circle cx="54" cy="139" r="6.5"/><circle cx="66" cy="140" r="6"/>
+    <circle cx="60" cy="151" r="5.5"/><circle cx="62" cy="162" r="4.5"/><circle cx="60" cy="171" r="3.2"/>
+  </g>
+  <g fill="#9c86c9" opacity=".55">
+    <circle cx="130" cy="66" r="3.5"/><circle cx="125" cy="78" r="3.2"/><circle cx="130" cy="90" r="3"/>
+    <circle cx="62" cy="134" r="3.2"/><circle cx="58" cy="146" r="3"/>
+  </g>
+  <use href="#bloom" x="14" y="14" width="56" height="56" color="#eeb4c2"/>
+  <use href="#bloom" x="66" y="40" width="34" height="34" color="#f6d3da"/>
+  <use href="#bloom" x="150" y="94" width="38" height="38" color="#eeb4c2"/>
+  <use href="#bloom" x="22" y="84" width="36" height="36" color="#f6d3da"/>
+  <use href="#bloom" x="98" y="136" width="40" height="40" color="#eeb4c2"/>
+  <use href="#bloom" x="170" y="140" width="26" height="26" color="#d9c9ee"/>
+  <use href="#bloom" x="140" y="168" width="26" height="26" color="#f6d3da"/>
+</svg>

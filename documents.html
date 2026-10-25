@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Professional Documents | Alexandra Feinberg</title>
+  <link rel="stylesheet" href="style.css?v=2026-10-25">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="index.html">Alexandra Feinberg's<br>Professional<br>Portfolio</a>
+    <ul class="nav">
+      <li>
+        <a href="index.html">Home</a>
+        <ul class="sub">
+          <li><a href="index.html#about">About Me</a></li>
+          <li><a href="index.html#quote">Favorite Quote</a></li>
+        </ul>
+      </li>
+      <li>
+        <a class="active" href="documents.html">Professional Documents</a>
+        <ul class="sub">
+          <li><a href="documents.html#resume">Resume</a></li>
+          <li><a href="documents.html#cover-letter">Cover Letter</a></li>
+          <li><a href="documents.html#letters">Letters of Recommendation</a></li>
+          <li><a href="documents.html#video">Professional Video</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="cape.html">CAPE Connections</a>
+        <ul class="sub">
+          <li><a href="cape.html#cape1">CAPE 1: Shared Vision</a></li>
+          <li><a href="cape.html#cape2">CAPE 2: Instructional Leadership</a></li>
+          <li><a href="cape.html#cape3">CAPE 3: Management &amp; Learning Environment</a></li>
+          <li><a href="cape.html#cape4">CAPE 4: Family &amp; Community Engagement</a></li>
+          <li><a href="cape.html#cape5">CAPE 5: Ethics &amp; Integrity</a></li>
+          <li><a href="cape.html#cape6">CAPE 6: External Context &amp; Policy</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="blog.html">Blog</a>
+        <ul class="sub">
+          <li><a href="blog-over-testing.html">Are We Over-Testing Our Students?</a></li>
+          <li><a href="blog-ai-in-the-classroom.html">AI in the Classroom: Help or Hazard?</a></li>
+          <li><a href="blog-homework.html">Does Homework Actually Help?</a></li>
+          <li><a href="blog-inclusion.html">What Does Inclusion Really Mean?</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="contact.html">Contact</a>
+        <ul class="sub">
+          <li><a href="contact.html">Get in Touch</a></li>
+          <li><a href="mailto:alifeinberg01@gmail.com">Personal Email</a></li>
+          <li><a href="mailto:alexandra.feinberg@svusd.org">Work Email</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<div class="hero small">
+  <h1>Professional Documents</h1>
+  <div class="rule"></div>
+</div>
+
+<section>
+  <div class="wrap">
+
+    <!-- TO ADD A DOCUMENT: save the PDF in portfolio/docs/ and replace the
+         placeholder div with:  <a class="btn" href="docs/resume.pdf" target="_blank">View Resume</a> -->
+
+    <div class="block" id="resume">
+      <p class="eyebrow">Document</p>
+      <h2>Resume</h2>
+      <p class="lead">A summary of my education, credentials, and professional experience.</p>
+      <div class="doc-actions">
+        <a class="btn" href="docs/Alexandra-Feinberg-Resume-2026.pdf" download>Download PDF</a>
+      </div>
+      <!-- The resume pages are drawn right on the page so visitors can read it without opening anything -->
+      <div class="pdf-pages" data-pdf="docs/Alexandra-Feinberg-Resume-2026.pdf">
+        <noscript><a href="docs/Alexandra-Feinberg-Resume-2026.pdf">View the resume (PDF)</a></noscript>
+      </div>
+    </div>
+
+    <div class="block" id="cover-letter">
+      <p class="eyebrow">Document</p>
+      <h2>Cover Letter</h2>
+      <p class="lead">An introduction to my leadership philosophy and administrative goals.</p>
+      <div class="placeholder">Cover letter coming soon.</div>
+    </div>
+
+    <div class="block" id="letters">
+      <p class="eyebrow">Documents</p>
+      <h2>Letters of Recommendation</h2>
+      <p class="lead">Letters from supervisors, mentors, and colleagues.</p>
+      <div class="placeholder">Letters of recommendation coming soon.</div>
+    </div>
+
+    <div class="block" id="video">
+      <p class="eyebrow">Video</p>
+      <h2>Professional Video</h2>
+      <p class="lead">A short introduction to who I am as an educator and leader.</p>
+      <!-- TO ADD A VIDEO: replace the placeholder div with:
+           <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Professional video" allowfullscreen></iframe></div> -->
+      <div class="placeholder">Professional video coming soon.</div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  &copy; 2026 Alexandra Feinberg &middot; Professional Portfolio
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  // Render each embedded PDF as page images, sized to the column and sharp on high-DPI screens.
+  (function () {
+    if (!window.pdfjsLib) return;
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    document.querySelectorAll(".pdf-pages").forEach(function (box) {
+      pdfjsLib.getDocument(box.dataset.pdf).promise.then(function (pdf) {
+        var chain = Promise.resolve();
+        for (var n = 1; n <= pdf.numPages; n++) {
+          chain = chain.then(pdf.getPage.bind(pdf, n)).then(function (page) {
+            var scale = Math.min(3, 1.5 * (window.devicePixelRatio || 1));
+            var vp = page.getViewport({ scale: scale });
+            var canvas = document.createElement("canvas");
+            canvas.width = vp.width;
+            canvas.height = vp.height;
+            canvas.setAttribute("role", "img");
+            canvas.setAttribute("aria-label", "Resume page " + page.pageNumber);
+            box.appendChild(canvas);
+            return page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
+          });
+        }
+      }).catch(function () {
+        box.innerHTML = "<a href=\"" + box.dataset.pdf + "\">View the resume (PDF)</a>";
+      });
+    });
+  })();
+</script>
+</body>
+</html>
